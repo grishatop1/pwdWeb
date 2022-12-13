@@ -24,7 +24,7 @@ if (!DEBUG) {
                 targets: '.loader',
                 opacity: 0,
                 delay: 100,
-                duration: 500,
+                duration: 1000,
                 easing: 'linear',
                 complete: () => {
                     mainAnimation();
