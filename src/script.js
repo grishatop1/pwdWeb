@@ -48,38 +48,33 @@ const mainAnimation = () => {
     const pwdtext_current_pos = getOffset(pwdtext_current).top;
     const pwdtext_current_height = getOffset(pwdtext_current).height;
 
-    var tp = new Typewriter('#typewriter1', {delay: 75}).pauseFor(2200).typeString("Keep your passwords secure.").start()
+    let tp = new Typewriter('#typewriter1', {delay: 75}).pauseFor(2200).typeString("Keep your passwords secure.").start()
 
-    anime({
-        targets: '#pwdcurrent',
-        top: pwdtext_origin_pos + pwdtext_current_height / 2,
-        delay: 1200,
-        duration: 1200,
+    let timeline = anime.timeline({
+        duration: 1000,
+        autoplay: true,
         easing: "easeInOutExpo"
     })
-
-    anime({
+    .add({
+        targets: '#pwdcurrent',
+        top: pwdtext_origin_pos + pwdtext_current_height / 2,
+        duration: 1200,
+        delay: 1000
+    })
+    .add({
         targets: '.loader-wrap',
         opacity: 0,
-        delay: 1700,
         duration: 600,
         easing: "linear",
         complete: () => {
             document.getElementsByClassName('loader-wrap')[0].style.display = 'none';
-        },
-        begin: () => {
-            
         }
-    })
-
-    anime({
+    }, 1500)
+    .add({
         targets: "#image",
         opacity: [0, 1],
         scale: [0.85, 1],
-        delay: 1350,
-        duration: 1000,
-        easing: 'easeInOutExpo'
-    })
+    }, 1200)
 }
 
 const getOffset = (el) => {
