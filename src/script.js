@@ -48,7 +48,7 @@ const mainAnimation = () => {
     const pwdtext_current_pos = getOffset(pwdtext_current).top;
     const pwdtext_current_height = getOffset(pwdtext_current).height;
 
-    var tp = new Typewriter('#typewriter1', {delay: 75}).pauseFor(2200).typeString("Keep your passwords secure. ").start()
+    var tp = new Typewriter('#typewriter1', {delay: 75}).pauseFor(2200).typeString("Keep your passwords secure.").start()
 
     anime({
         targets: '#pwdcurrent',
