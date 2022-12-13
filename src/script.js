@@ -53,16 +53,16 @@ const mainAnimation = () => {
 
     let tp = new Typewriter('#typewriter1', {delay: 75, loop: true})
     .typeString("Keep your passwords secure.")
-    .pauseFor(3000)
+    .pauseFor(4500)
     .deleteAll()
     .typeString("Use a strong password for the vault!")
-    .pauseFor(3000)
+    .pauseFor(4500)
     .deleteAll()
     .typeString("The project is fully open-source :)")
-    .pauseFor(3000)
+    .pauseFor(4500)
     .deleteAll()
     .typeString("Import from KeePass, LastPass, etc.")
-    .pauseFor(3000)
+    .pauseFor(4500)
     .deleteAll()
     .typeString("Enjoy!")
     .pauseFor(2000)
@@ -86,9 +86,13 @@ const mainAnimation = () => {
         easing: "linear",
         complete: () => {
             document.getElementsByClassName('loader-wrap')[0].style.display = 'none';
-            tp.start()
         }
     }, 1500)
+    .add({
+        begin: () => {
+            tp.start()
+        }
+    }, 1750)
     .add({
         targets: "#image",
         opacity: [0, 1],
