@@ -40,7 +40,7 @@
 
 <body class="bg-background">
   <h1
-    class="text-8xl font-bold text-primary hidden opacity-0 absolute z-[600] drop-shadow-xl top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] tablet:text-5xl"
+    class="text-8xl font-bold text-primary hidden opacity-0 absolute z-[600] drop-shadow-xl top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] tablet:text-5xl noselect"
     id="pwdcurrent">pwdKeeper</h1>
   <div class="loader-wrap"
     style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: black; position: fixed; z-index: 500; top: 0; left:0; opacity: 1;">
@@ -50,9 +50,9 @@
     <div class="min-h-screen flex flex-col justify-center">
       <div class="text-center flex flex-col items-center">
         <h1 class="tablet:m-[-3em] mt-[0em]" id="pwdtext"></h1>
-        <p class="text-xl text-center text-primary opacity-75 mt-[5.5em]">
-          <span id="typewriter1"></span>
-          <i class="fa-solid fa-lock"></i>
+        <p class="text-xl text-center text-primary opacity-75 mt-[5.5em] flex flex-row items-center">
+          <span id="typewriter1" class="noselect whitespace-nowrap"></span>
+          <i class="fa-solid fa-lock ml-1"></i>
         </p>
       </div>
       <div class="flex justify-center mt-10">
@@ -61,7 +61,7 @@
       <div class="flex justify-center items-center my-10 tablet:flex-col">
         <div class="flex flex-col mr-[4em] tablet:mr-0 tablet:mb-[1em] group">
           <buttton
-            class="bg-secondary text-white py-3 px-10 rounded-xl cursor-pointer hover:shadow-lg hover:shadow-blue-600/20 download-btn tablet:text-[14px]"
+            class="bg-secondary text-white py-3 px-10 rounded-xl cursor-pointer hover:shadow-lg hover:shadow-blue-600/20 download-btn tablet:text-[14px] noselect"
             id="win-btn">
             <i class="fa-brands fa-windows"></i> Download for Windows
           </buttton>
@@ -69,7 +69,7 @@
         </div>
         <div class="flex flex-col group">
           <buttton
-            class="bg-secondary text-white py-3 px-10 rounded-xl cursor-pointer hover:shadow-lg hover:shadow-red-600/20 download-btn tablet:text-[14px]"
+            class="bg-secondary text-white py-3 px-10 rounded-xl cursor-pointer hover:shadow-lg hover:shadow-red-600/20 download-btn tablet:text-[14px] noselect"
             id="lin-btn">
             <i class="fa-brands fa-linux"></i> Download for Linux
           </buttton>
