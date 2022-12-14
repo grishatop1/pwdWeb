@@ -39,14 +39,9 @@ if (!DEBUG) {
 
 
 const mainAnimation = () => {
+
     pwdtext_current.style.display = "flex";
-    anime({
-        targets: '#pwdcurrent',
-        opacity: 1,
-        delay: 200,
-        duration: 1000,
-        easing: 'linear'
-    })
+
     const pwdtext_origin_pos = getOffset(pwdtext_origin).top;
     const pwdtext_current_pos = getOffset(pwdtext_current).top;
     const pwdtext_current_height = getOffset(pwdtext_current).height;
@@ -68,16 +63,20 @@ const mainAnimation = () => {
     .pauseFor(2000)
     .deleteAll()
 
-    let timeline = anime.timeline({
+    anime.timeline({
         duration: 1000,
         autoplay: true,
         easing: "easeInOutExpo"
     })
     .add({
         targets: '#pwdcurrent',
+        opacity: 1,
+        easing: 'linear'
+    })
+    .add({
+        targets: '#pwdcurrent',
         top: pwdtext_origin_pos + pwdtext_current_height / 2,
-        duration: 1200,
-        delay: 1000
+        duration: 1200
     })
     .add({
         targets: '.loader-wrap',
