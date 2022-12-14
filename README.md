@@ -12,3 +12,6 @@ npm install
 ```
 npm run dev
 ```
+
+It is being hosted on
+https://pwdkeeper.netlify.app/
