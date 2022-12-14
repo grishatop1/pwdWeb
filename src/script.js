@@ -42,10 +42,6 @@ const mainAnimation = () => {
 
     pwdtext_current.style.display = "flex";
 
-    const pwdtext_origin_pos = getOffset(pwdtext_origin).top;
-    const pwdtext_current_pos = getOffset(pwdtext_current).top;
-    const pwdtext_current_height = getOffset(pwdtext_current).height;
-
     let tp = new Typewriter('#typewriter1', {delay: 75, loop: true})
     .typeString("Keep your passwords secure.")
     .pauseFor(4500)
@@ -75,7 +71,7 @@ const mainAnimation = () => {
     })
     .add({
         targets: '#pwdcurrent',
-        top: pwdtext_origin_pos + pwdtext_current_height / 2,
+        top: getOffset(pwdtext_origin).top + getOffset(pwdtext_current).height / 2,
         duration: 1200
     })
     .add({
