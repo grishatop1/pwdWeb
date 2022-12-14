@@ -117,8 +117,6 @@ const scrollReveal = () => {
 		var revealTop = revealElement[i].getBoundingClientRect().top;
 		if (revealTop < windowHeight - revealPoint) {
 			revealElement[i].classList.add("active");
-		} else {
-			revealElement[i].classList.remove("active");
 		}
 	}
 }
