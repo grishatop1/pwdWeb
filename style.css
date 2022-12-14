@@ -40,6 +40,19 @@ li {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+section {
+  position: relative;
+  scale: 0.94;
+	opacity: 0;
+	transition: 0.9s;
+	transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+}
+
+section.active {
+	opacity: 1;
+	scale: 1;
+}
+
 @media only screen and (max-width: 600px) {
   p, li {
     font-size: 1em;
