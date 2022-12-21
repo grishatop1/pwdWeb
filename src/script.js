@@ -1,6 +1,9 @@
 import anime from "animejs";
 import Typewriter from 'typewriter-effect/dist/core';
 
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
+
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
     try {
@@ -15,6 +18,29 @@ const pwdtext_current = document.getElementById('pwdcurrent');
 
 const download_btn_win = document.getElementById('win-btn');
 const download_btn_lin = document.getElementById('lin-btn');
+
+download_btn_lin.addEventListener('click', () => {
+    showNotAvailable();
+});
+
+download_btn_win.addEventListener('click', () => {
+    showNotAvailable();
+});
+
+const showNotAvailable = () => {
+    Toastify({
+        text: "The builds are not yet available.",
+        duration: 1800,
+        newWindow: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "#ff4a4a",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+}
 
 if (!DEBUG) {
     document.fonts.ready.then(() => {
