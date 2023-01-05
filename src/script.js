@@ -29,7 +29,7 @@ download_btn_win.addEventListener('click', () => {
 
 const showNotAvailable = () => {
     Toastify({
-        text: "The builds are not yet available.",
+        text: "Build not available yet.",
         duration: 1800,
         newWindow: true,
         gravity: "bottom", // `top` or `bottom`
