@@ -20,7 +20,7 @@ const download_btn_win = document.getElementById('win-btn');
 const download_btn_lin = document.getElementById('lin-btn');
 
 download_btn_lin.addEventListener('click', () => {
-    showNotAvailable();
+    downloadURI("https://github.com/grishatop1/pwdKeeper/releases/download/v0.1/pwdKeeper-x86_64.AppImage", "pwdKeeper-x86_64.AppImage")
 });
 
 download_btn_win.addEventListener('click', () => {
@@ -29,7 +29,7 @@ download_btn_win.addEventListener('click', () => {
 
 const showNotAvailable = () => {
     Toastify({
-        text: "The builds are not yet available.",
+        text: "Build not available yet.",
         duration: 1800,
         newWindow: true,
         gravity: "bottom", // `top` or `bottom`
@@ -148,3 +148,12 @@ const scrollReveal = () => {
 }
 
 window.addEventListener("scroll", scrollReveal);
+
+function downloadURI(uri, name) {
+  let link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
